@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="ihm_Labo_Gui">
+    <output-path>$PROJECT_DIR$/out/artifacts/ihm_Labo_Gui</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="ihm_Labo_Gui.jar">
+        <element id="module-output" name="ihm_Labo_Gui" />
+        <element id="module-source" name="ihm_Labo_Gui" />
+      </element>
+    </root>
+  </artifact>
+</component>

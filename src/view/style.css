@@ -1,3 +1,27 @@
+.noBGButton{
+    -fx-background-color: transparent, transparent, transparent, transparent, transparent;
+
+
+}
+
+#colorPicker{
+    -fx-color-label-visible: false;
+}
+
+#sidePanel{
+    -fx-background-color:lightgray;
+}
+.lightBg{
+    -fx-background-color:#e3e3e3;
+}
 #labelPane{
-   
+
+}
+.text-field{
+    -fx-background-color: transparent, transparent, transparent, transparent, transparent;
+    -fx-text-fill: grey;
+}
+
+.segoe{
+    -fx-font-family: "Segoe UI";
 }

@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Annotation;
@@ -121,9 +122,10 @@ public class Controller implements Initializable {
                 double endX = Math.min(originX, clickedX);
                 double endY = Math.min(originY, clickedY);
                 Label label1 = new Label(LabelListController.getInstance().getCurrentLabel().getName());
+                label1.setFont(Font.font("Segoe UI Black",20));
                 label1.setTextFill(LabelListController.getInstance().getCurrentLabel().getColor());
                 label1.setLayoutX(endX);
-                label1.setLayoutY(endY - 20);
+                label1.setLayoutY(endY - 26);
 
 
 

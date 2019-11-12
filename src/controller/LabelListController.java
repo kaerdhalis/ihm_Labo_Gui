@@ -60,7 +60,7 @@ public class LabelListController {
 
         double topAnchor= 0;
         for (AnchorPane a:labelPanels ) {
-            topAnchor+=74;
+            topAnchor+=a.getHeight();
         }
 
        // Text text= (Text) newLabelPanel.lookup("#labelText");
@@ -68,10 +68,11 @@ public class LabelListController {
         AnchorPane.setTopAnchor(newLabelPanel,topAnchor);
 
         listRoot.getChildren().add(newLabelPanel);
-        topAnchor+= 74;
+        labelPanels.add(newLabelPanel);
+        topAnchor+= 54;
         AnchorPane.setTopAnchor(addingPanel,topAnchor);
 
-        labelPanels.add(newLabelPanel);
+
     }
 
 
