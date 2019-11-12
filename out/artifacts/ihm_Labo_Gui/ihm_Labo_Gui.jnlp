@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ihm_Labo_Gui.jnlp">
+  <information>
+    <title>ihm_Labo_Gui</title>
+    <vendor>Unknown</vendor>
+    <description>ihm_Labo_Gui</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ihm_Labo_Gui.jar" size="70006" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="Main"  name="ihm_Labo_Gui" />
+  <update check="background"/>
+</jnlp>
