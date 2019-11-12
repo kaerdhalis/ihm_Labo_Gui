@@ -35,4 +35,8 @@ public class Annotation {
     public Label getLabel() {
         return label;
     }
+
+    public String toString() {
+        return label.toString() +startX+","+startY+","+width+","+height;
+    }
 }

@@ -23,12 +23,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.Annotation;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -41,6 +41,8 @@ public class Controller implements Initializable {
     private double originX;
     private double originY;
     private boolean imageLoaded= false;
+
+    private ArrayList <Annotation> annotationList = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -105,11 +107,17 @@ public class Controller implements Initializable {
 
         if (imageLoaded) {
 
-
+        double clickedX= mouseEvent.getX();
+        double clickedY = mouseEvent.getY();
+        double endX = Math.min(originX, clickedX);
+        double endY = Math.min(originY, clickedY);
         Label label1 = new Label("Search");
         label1.setTextFill(colorPicker.getValue());
-        label1.setLayoutX(Math.min(originX, mouseEvent.getX()));
-        label1.setLayoutY(Math.min(originY, mouseEvent.getY()) - 20);
+        label1.setLayoutX(endX);
+        label1.setLayoutY(endY - 20);
+
+
+        annotationList.add(new Annotation(Math.min(originX, clickedX),Math.min(originY, clickedY),rectangle.getWidth(),rectangle.getHeight(),new model.Label("search",colorPicker.getValue())));
         imagePane.getChildren().add(label1);
     }
     }
@@ -119,6 +127,7 @@ public class Controller implements Initializable {
         if(keyEvent.getCode() == KeyCode.D&& imageLoaded){
 
                 imagePane.getChildren().remove(1,imagePane.getChildren().size());
+                annotationList.clear();
 
 
         }
@@ -126,8 +135,34 @@ public class Controller implements Initializable {
         if(keyEvent.getCode() == KeyCode.Z&&imageLoaded){
             if (imagePane.getChildren().size()>=3)
                 imagePane.getChildren().remove(imagePane.getChildren().size()-2,imagePane.getChildren().size());
-
+            if(!annotationList.isEmpty())
+            annotationList.remove(annotationList.size()-1);
 
         }
+    }
+
+    public void export(ActionEvent actionEvent) {
+
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv"));
+        File selectedFile = fileChooser.showSaveDialog(null);
+
+        if (selectedFile != null) {
+            try {
+                PrintWriter writer;
+                writer = new PrintWriter(selectedFile);
+                writer.println("name,color,startX,startY,width,height");
+
+                for (Annotation annotation : annotationList) {
+                    writer.println(annotation.toString());
+                }
+                writer.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
     }
 }
