@@ -35,7 +35,7 @@
             <Pane fx:id="imagePane" layoutX="92.0" layoutY="104.0" prefHeight="656.0" prefWidth="1091.0">
                <children>
                   <ImageView fx:id="imageView" fitHeight="667.0" fitWidth="1102.0" layoutX="-4.0" layoutY="-8.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="189.0" layoutY="100.0" text="Label" />
+                  <Label layoutX="189.0" layoutY="100.0" text="model.Label" />
                </children>
             </Pane>
             <Button layoutX="1386.0" layoutY="95.0" mnemonicParsing="false" text="+" />

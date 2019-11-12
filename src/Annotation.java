@@ -1,3 +1,5 @@
+import model.Label;
+
 public class Annotation {
     private double startX;
     private double startY;

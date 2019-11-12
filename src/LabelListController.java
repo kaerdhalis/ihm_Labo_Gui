@@ -1,11 +1,13 @@
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import model.Label;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class LabelListController {
+
     private AnchorPane listRoot;
     private ArrayList<Label> labels;
     private ArrayList<AnchorPane> labelPanels;
@@ -17,12 +19,14 @@ public class LabelListController {
         labels= new ArrayList<>();
         labelPanels=new ArrayList<>();
     }
+
     public void add(Label l) throws IOException {
         AnchorPane newLabelPanel= FXMLLoader.load(getClass().getResource("view/LabelPanel.fxml"));
         double topAnchor= 0;
         for (AnchorPane a:labelPanels ) {
             topAnchor+=74;
         }
+
         Text text= (Text) newLabelPanel.lookup("#labelText");
         text.setText(l.getName());
         AnchorPane.setTopAnchor(newLabelPanel,topAnchor);

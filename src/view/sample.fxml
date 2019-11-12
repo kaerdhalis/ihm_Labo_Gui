@@ -39,7 +39,7 @@
                      <children>
                         <AnchorPane layoutX="192.0" prefHeight="34.0" prefWidth="35.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="192.0" AnchorPane.topAnchor="-1.0">
                            <children>
-                              <Button alignment="BOTTOM_CENTER" layoutX="57.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="44.0" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="newLabelButton" alignment="BOTTOM_CENTER" layoutX="57.0" mnemonicParsing="false" onAction="#NewLabel" prefHeight="34.0" prefWidth="44.0" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
