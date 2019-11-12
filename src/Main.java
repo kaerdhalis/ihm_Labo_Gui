@@ -13,10 +13,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1820, 1080));
-        AnchorPane labelListPane= (AnchorPane) root.lookup("#LabelListPane");
-        lbc= new LabelListController(labelListPane);
-        lbc.add(new Label("test2",new Color(0.3,0.2,0.5,1)));
+
+        primaryStage.setScene(new Scene(root, 1920 , 1080));
+        primaryStage.setResizable(false);
 
         primaryStage.show();
     }

@@ -15,36 +15,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane fx:id="pane" onKeyReleased="#onKeyReleased" prefHeight="900.0" prefWidth="1600.0">
+      <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
-            <Separator layoutX="1221.0" layoutY="42.0" orientation="VERTICAL" prefHeight="850.0" prefWidth="10.0" />
-            <MenuBar prefWidth="1600.0">
+            <Separator layoutX="1490.0" layoutY="29.0" orientation="VERTICAL" prefHeight="1052.0" prefWidth="14.0" />
+            <MenuBar prefWidth="1920.0">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem fx:id="openButton" mnemonicParsing="false" onAction="#open" text="Open" />
+                        <MenuItem mnemonicParsing="false" text="Open" />
                     <MenuItem mnemonicParsing="false" text="Save" />
                         <MenuItem mnemonicParsing="false" text="Export" />
-                        <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exit" text="Exit" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
-            <Pane fx:id="imagePane" layoutX="92.0" layoutY="104.0" prefHeight="656.0" prefWidth="1091.0">
+            <Pane layoutX="92.0" layoutY="104.0" prefHeight="864.0" prefWidth="1207.0">
                <children>
-                  <ImageView fx:id="imageView" fitHeight="667.0" fitWidth="1102.0" layoutX="-4.0" layoutY="-8.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="189.0" layoutY="100.0" text="Label" />
+                  <ImageView fitHeight="871.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Button layoutX="1386.0" layoutY="95.0" mnemonicParsing="false" text="+" />
-            <Label layoutX="1361.0" layoutY="47.0" prefHeight="36.0" prefWidth="78.0" text="Labels:">
+            <Button layoutX="1702.0" layoutY="91.0" mnemonicParsing="false" text="+" />
+            <Label layoutX="1677.0" layoutY="43.0" prefHeight="36.0" prefWidth="78.0" text="Labels:">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <ColorPicker fx:id="colorPicker" layoutX="1456.0" layoutY="98.0" prefHeight="26.0" prefWidth="119.0" />
+            <ColorPicker layoutX="1748.0" layoutY="91.0" />
             <VBox layoutX="1585.0" layoutY="200.0" prefHeight="741.0" prefWidth="266.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="28.0" prefWidth="266.0">

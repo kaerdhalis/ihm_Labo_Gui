@@ -1,64 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="app" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem fx:id="OpenButton" mnemonicParsing="false" onAction="#open" text="Open…" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Export" />
-            <MenuItem fx:id="ExitButton" mnemonicParsing="false" onAction="#exit" text="Exit" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <SplitPane dividerPositions="0.75" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <items>
-        <AnchorPane prefHeight="549.0" prefWidth="539.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <Pane fx:id="pane" onKeyReleased="#onKeyReleased" prefHeight="900.0" prefWidth="1600.0">
+         <children>
+            <Separator layoutX="1221.0" layoutY="42.0" orientation="VERTICAL" prefHeight="850.0" prefWidth="10.0" />
+            <MenuBar prefWidth="1600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="openButton" mnemonicParsing="false" onAction="#open" text="Open" />
+                    <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Export" />
+                        <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exit" text="Exit" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Pane fx:id="imagePane" layoutX="92.0" layoutY="104.0" prefHeight="656.0" prefWidth="1091.0">
                <children>
-                  <StackPane fx:id="stac" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Canvas height="569.0" width="627.0" />
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="imageView" fitHeight="667.0" fitWidth="1102.0" layoutX="-4.0" layoutY="-8.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="189.0" layoutY="100.0" text="Label" />
                </children>
-        </AnchorPane>
-        <AnchorPane>
-          <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Labels:" textAlignment="CENTER" wrapText="false">
-                     <font>
-                <Font size="18.0" fx:id="x1" />
-                     </font>
-                     <textFill>
-                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-                     </textFill></Label>
-                  <VBox layoutY="51.0" prefHeight="518.0" prefWidth="263.0">
+            </Pane>
+            <Button layoutX="1386.0" layoutY="95.0" mnemonicParsing="false" text="+" />
+            <Label layoutX="1361.0" layoutY="47.0" prefHeight="36.0" prefWidth="78.0" text="Labels:">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ColorPicker fx:id="colorPicker" layoutX="1456.0" layoutY="98.0" prefHeight="26.0" prefWidth="119.0" />
+            <VBox layoutX="1585.0" layoutY="200.0" prefHeight="741.0" prefWidth="266.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="28.0" prefWidth="266.0">
                      <children>
-                        <Pane prefHeight="53.0" prefWidth="263.0">
-                           <children>
-                              <Button layoutX="101.0" layoutY="14.0" mnemonicParsing="false" text="+" />
-                           </children>
-                        </Pane>
-                     </children></VBox>
-          </children>
-        </AnchorPane>
-      </items>
-    </SplitPane>
-  </children>
-</VBox>
+                        <TextField prefHeight="26.0" prefWidth="106.0" text="test" />
+                        <Button mnemonicParsing="false" text="-" />
+                        <ColorPicker prefHeight="26.0" prefWidth="48.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
