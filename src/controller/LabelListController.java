@@ -25,6 +25,7 @@ public class LabelListController {
     private ArrayList<AnchorPane> labelPanels;
     private AnchorPane addingPanel;
 
+    private Label currentLabel;
     private LabelListController() {
 
         labels= new ArrayList<>();
@@ -65,4 +66,12 @@ public class LabelListController {
     }
 
 
+    public Label getCurrentLabel() {
+        return currentLabel;
+    }
+
+    public void setCurrentLabel(Label currentLabel) {
+
+        this.currentLabel = currentLabel;
+    }
 }

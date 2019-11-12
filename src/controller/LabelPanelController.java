@@ -8,13 +8,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import model.Label;
 public class LabelPanelController implements Initializable {
     ColorPicker colorPicker;
-    Text text;
+    TextField text;
     private Label label;
     private AnchorPane myRoot;
     @Override
@@ -24,8 +25,14 @@ public class LabelPanelController implements Initializable {
 
     public void setMyRoot(AnchorPane myRoot) {
         this.myRoot = myRoot;
-        Text text= (Text) myRoot.lookup("#labelText");
+        text= (TextField) myRoot.lookup("#labelText");
         text.setText(label.getName());
+        text.textProperty().addListener((observable, oldValue, newValue) -> {
+            label.setName(newValue);
+        });
+
+        colorPicker= (ColorPicker) myRoot.lookup("#colorPicker");
+        colorPicker.setValue(label.getColor());
     }
 
     public void setLabel(Label label) {
@@ -36,7 +43,15 @@ public class LabelPanelController implements Initializable {
 
     }
 
-    public void Test(ActionEvent actionEvent) {
-        System.out.println("clicked");
+    public void NewAnnotation(ActionEvent actionEvent) {
+
+        LabelListController.getInstance().setCurrentLabel(label);
+    }
+
+    public  void changeColor(ActionEvent actionEvent){
+        label.setColor(colorPicker.getValue());
+    }
+    public  void updateText(ActionEvent actionEvent){
+        label.setName(text.getText());
     }
 }

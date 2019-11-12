@@ -14,7 +14,7 @@ public class Main extends Application {
         @Override
         public void start(Stage primaryStage) throws Exception{
             Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
-            primaryStage.setTitle("Hello World");
+            primaryStage.setTitle("Image Annotator");
             primaryStage.setScene(new Scene(root, 1820, 1080));
             AnchorPane labelListPane= (AnchorPane) root.lookup("#LabelListPane");
 
