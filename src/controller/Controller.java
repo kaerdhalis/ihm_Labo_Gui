@@ -146,7 +146,7 @@ public class Controller implements Initializable {
         if(keyEvent.getCode() == KeyCode.Z&&imageLoaded){
             if (imagePane.getChildren().size()>=3)
                 imagePane.getChildren().remove(imagePane.getChildren().size()-2,imagePane.getChildren().size());
-           
+
             if(!annotationList.isEmpty())
             annotationList.remove(annotationList.size()-1);
 

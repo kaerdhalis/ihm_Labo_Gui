@@ -1,11 +1,16 @@
 package model;
 
+
+import javafx.scene.shape.Rectangle;
+
 public class Annotation {
     private double startX;
     private double startY;
     private double  width;
     private double height;
 
+    private Rectangle rectangle;
+    private javafx.scene.control.Label jfxLabel;
     private Label label;
 
     public Annotation(double startX, double startY, double width, double height, Label label) {
@@ -38,5 +43,21 @@ public class Annotation {
 
     public String toString() {
         return label.toString() +startX+","+startY+","+width+","+height;
+    }
+
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+    public void setRectangle(Rectangle rectangle) {
+        this.rectangle = rectangle;
+    }
+
+    public javafx.scene.control.Label getJfxLabel() {
+        return jfxLabel;
+    }
+
+    public void setJfxLabel(javafx.scene.control.Label jfxLabel) {
+        this.jfxLabel = jfxLabel;
     }
 }
