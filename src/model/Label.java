@@ -1,3 +1,5 @@
+package model;
+
 import javafx.scene.paint.Color;
 
 public class Label {
@@ -8,6 +10,8 @@ public class Label {
         this.name = name;
         this.color = color;
     }
+
+
 
     public String getName() {
         return name;
@@ -23,5 +27,9 @@ public class Label {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public String toString() {
+        return name +","+color.toString()+",";
     }
 }
