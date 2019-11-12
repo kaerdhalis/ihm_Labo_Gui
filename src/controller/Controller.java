@@ -126,8 +126,10 @@ public class Controller implements Initializable {
                 label1.setLayoutY(endY - 20);
 
 
-                annotationList.add(new Annotation(Math.min(originX, clickedX), Math.min(originY, clickedY), rectangle.getWidth(), rectangle.getHeight(), LabelListController.getInstance().getCurrentLabel()));
+
+                annotationList.add(new Annotation(Math.min(originX, clickedX), Math.min(originY, clickedY), rectangle.getWidth(), rectangle.getHeight(), rectangle,label1,LabelListController.getInstance().getCurrentLabel()));
                 imagePane.getChildren().add(label1);
+
                 LabelListController.getInstance().setCurrentLabel(null);
             }
         }
@@ -146,7 +148,7 @@ public class Controller implements Initializable {
         if(keyEvent.getCode() == KeyCode.Z&&imageLoaded){
             if (imagePane.getChildren().size()>=3)
                 imagePane.getChildren().remove(imagePane.getChildren().size()-2,imagePane.getChildren().size());
-           
+
             if(!annotationList.isEmpty())
             annotationList.remove(annotationList.size()-1);
 
