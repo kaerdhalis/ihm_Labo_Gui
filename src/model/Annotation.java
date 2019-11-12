@@ -1,20 +1,38 @@
 package model;
-import java.awt.geom.Point2D;
-
 
 public class Annotation {
+    private double startX;
+    private double startY;
+    private double  width;
+    private double height;
 
+    private Label label;
 
-    private String tag;     // Name of the identified object
-    private Point2D start; // Coordinates x,y of annotated object's origin point
-    private Point2D end;    // Coordinates x,y of the annotated object's end point
-
-
-    public Annotation(String tag, Point2D origin, Point2D end) {
-        this.tag = tag;
-        this.start = origin;
-        this.end = end;
+    public Annotation(double startX, double startY, double width, double height, Label label) {
+        this.startX = startX;
+        this.startY = startY;
+        this.width = width;
+        this.height = height;
+        this.label = label;
     }
 
-}
+    public double getStartX() {
+        return startX;
+    }
 
+    public double getStartY() {
+        return startY;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public Label getLabel() {
+        return label;
+    }
+}

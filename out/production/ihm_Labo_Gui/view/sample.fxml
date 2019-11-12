@@ -10,9 +10,10 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#onKeyReleased" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -22,16 +23,24 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="openButton" mnemonicParsing="false" onAction="#open" text="Open" />
               <MenuItem mnemonicParsing="false" text="Save" />
                   <MenuItem mnemonicParsing="false" text="Export" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+                  <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exit" text="Exit" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
+        
 
-      <AnchorPane layoutX="-40.0" layoutY="28.0" prefHeight="1052.0" prefWidth="1483.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0" />
+      <AnchorPane layoutX="-40.0" layoutY="28.0" prefHeight="1052.0" prefWidth="1483.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0">
+         <children>
+            <Pane fx:id="imagePane" layoutX="152.0" layoutY="90.0" prefHeight="808.0" prefWidth="1112.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="812.0" fitWidth="1112.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
       <AnchorPane layoutY="28.0" prefHeight="1052.0" prefWidth="434.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
          <children>
             <AnchorPane fx:id="LabelListPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="84.0">
@@ -41,7 +50,7 @@
                         <AnchorPane layoutX="127.0" prefHeight="34.0" prefWidth="201.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="127.0" AnchorPane.topAnchor="-1.0">
                            <children>
                               <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="34.0" prefWidth="41.0" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                              <ColorPicker layoutX="33.0" layoutY="5.0" prefHeight="25.0" prefWidth="135.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ColorPicker fx:id="colorPicker" layoutX="33.0" layoutY="5.0" prefHeight="25.0" prefWidth="135.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -56,6 +65,5 @@
 
          </children>
       </AnchorPane>
-      <ImageView fitHeight="1038.0" fitWidth="1483.0" layoutX="-298.0" layoutY="-253.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-785.0" AnchorPane.leftAnchor="-298.0" AnchorPane.rightAnchor="-1185.0" AnchorPane.topAnchor="-253.0" />
    </children>
 </AnchorPane>
