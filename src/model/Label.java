@@ -17,18 +17,16 @@ public class Label {
     public void addAnnotation(Annotation a){
         annotations.add(a);
     }
-    public void update(){
-        for (Annotation a:annotations) {
-            a.getRectangle().setStroke(getColor());
 
-        }
-    }
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        for (Annotation a:annotations) {
+            a.getJfxLabel().setText(getName());
+        }
     }
 
     public Color getColor() {
@@ -37,6 +35,10 @@ public class Label {
 
     public void setColor(Color color) {
         this.color = color;
+        for (Annotation a:annotations) {
+            a.getRectangle().setStroke(getColor());
+            a.getJfxLabel().setTextFill(getColor());
+        }
     }
 
     public String toString() {

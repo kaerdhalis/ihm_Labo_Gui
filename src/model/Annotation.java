@@ -13,12 +13,16 @@ public class Annotation {
     private javafx.scene.control.Label jfxLabel;
     private Label label;
 
-    public Annotation(double startX, double startY, double width, double height, Label label) {
+
+    public Annotation(double startX, double startY, double width, double height, Rectangle rectangle, javafx.scene.control.Label jfxLabel, Label label) {
         this.startX = startX;
         this.startY = startY;
         this.width = width;
         this.height = height;
+        this.rectangle = rectangle;
+        this.jfxLabel = jfxLabel;
         this.label = label;
+        label.addAnnotation(this);
     }
 
     public double getStartX() {

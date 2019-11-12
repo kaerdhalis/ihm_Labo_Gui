@@ -126,8 +126,10 @@ public class Controller implements Initializable {
                 label1.setLayoutY(endY - 20);
 
 
-                annotationList.add(new Annotation(Math.min(originX, clickedX), Math.min(originY, clickedY), rectangle.getWidth(), rectangle.getHeight(), LabelListController.getInstance().getCurrentLabel()));
+
+                annotationList.add(new Annotation(Math.min(originX, clickedX), Math.min(originY, clickedY), rectangle.getWidth(), rectangle.getHeight(), rectangle,label1,LabelListController.getInstance().getCurrentLabel()));
                 imagePane.getChildren().add(label1);
+
                 LabelListController.getInstance().setCurrentLabel(null);
             }
         }
