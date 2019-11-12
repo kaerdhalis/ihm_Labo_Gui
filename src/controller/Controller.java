@@ -28,6 +28,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,6 +42,8 @@ public class Controller implements Initializable {
     private double originX;
     private double originY;
     private boolean imageLoaded= false;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -129,5 +132,9 @@ public class Controller implements Initializable {
 
 
         }
+    }
+
+    public void NewLabel(ActionEvent actionEvent) throws IOException {
+        LabelListController.getInstance().newLabel();
     }
 }

@@ -1,3 +1,4 @@
+import controller.LabelListController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,8 +18,9 @@ public class Main extends Application {
             primaryStage.setScene(new Scene(root, 1820, 1080));
             AnchorPane labelListPane= (AnchorPane) root.lookup("#LabelListPane");
 
-            lbc= new LabelListController(labelListPane);
-            lbc.add(new Label("test2",new Color(0.3,0.2,0.5,1)));
+            lbc= LabelListController.getInstance();
+            lbc.hookTo(labelListPane);
+
                 primaryStage.show();
         }
 
